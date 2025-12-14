@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* تطبيق خط Cairo على الجسم بالكامل */
+        body { font-family: 'Cairo', sans-serif; }
+        
+        /* فئات الأزرار الثابتة (الوضع الفاتح فقط) */
+        .tab-active { @apply bg-blue-600 text-white shadow-lg transform scale-105 ring-2 ring-blue-300; }
+        .tab-inactive { @apply bg-white text-gray-700 hover:bg-gray-50 border border-gray-200; }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* تنسيق أيقونة details لتبدو أفضل مع السهم */
+        details > summary::marker,
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .summary-icon { transition: transform 0.3s ease; }
+        details[open] .summary-icon { transform: rotate(180deg); }
+
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col transition-all duration-300">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-blue-200 shadow-lg">CS</div>
+                <div>
+                    <h1 class="text-xl font-bold text-slate-800" data-i18n="site_title">منصة علوم الحاسب</h1>
+                    <p class="text-xs text-slate-500 font-medium" data-i18n="site_subtitle">المسار الكامل من الأساسيات إلى المعمارية</p>
+                </div>
+            </div>
+            
+            <button id="lang-toggle" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-full transition-colors font-semibold text-sm">
+                <span>🌐</span>
+                <span id="lang-label">English Interface</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4 flex-grow flex flex-col lg:flex-row gap-6 mt-4">
+        
+        <aside class="w-full lg:w-1/4 flex flex-col gap-3 h-fit sticky top-24" id="tabs-container">
+            </aside>
+
+        <section class="w-full lg:w-3/4">
+            <div id="content-area" class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden min-h-[600px] relative">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                    <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-800 mb-2" data-i18n="welcome_title">مرحباً بك في الأكاديمية</h2>
+                    <p class="text-slate-500 text-lg" data-i18n="welcome_msg">هنا تجد شرحاً تفصيلياً واختبارات حقيقية لكل محاضرة.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
+        <div class="container mx-auto text-center text-slate-500 text-sm">
+            <p data-i18n="footer">Made With ❤️ By Ahmed Ezz</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
