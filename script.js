@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         ar: {
             site_title: "منصة علوم الحاسب",
-            site_subtitle: "المسار الكامل من الأساسيات إلى المعمارية",
+            site_subtitle: "مراجعه شامله علي المنهج",
             toggle_btn: "English Interface",
             welcome_title: "مرحباً بك في الأكاديمية",
             welcome_msg: "هنا تجد شرحاً تفصيلياً واختبارات حقيقية لكل محاضرة.",
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle_btn: "واجهة عربية",
             welcome_title: "Welcome to the Academy",
             welcome_msg: "Here you will find detailed explanations and real quizzes for every lecture.",
-            footer: "All rights reserved &copy; 2023",
+            footer: "Made With ❤️ by Ahmed Ezzt",
             summary_title: "Lecture Summary",
             video_title: "Video Content",
             explanation_title: "Full Detailed Explanation",
